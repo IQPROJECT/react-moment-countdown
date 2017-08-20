@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import formatDate from './format-date';
 
@@ -22,7 +23,7 @@ class ReactMomentCountDown extends Component {
   }
 
   tick = () => {
-    const countdown = formatDate(new Date(), this.props.toDate, this.props.formatMask);
+    const countdown = formatDate(moment(), this.props.toDate, this.props.formatMask);
 
     if (countdown === '00:00:00') {
       window.clearInterval(this.timer);
